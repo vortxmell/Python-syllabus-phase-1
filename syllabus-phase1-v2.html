@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phase 1 Syllabus v2 — Road to AI Engineer</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap');
+
+  :root {
+    --bg: #0a0a0f;
+    --surface: #111118;
+    --card: #16161f;
+    --border: #2a2a3a;
+    --accent: #00ff9d;
+    --accent2: #7b61ff;
+    --accent3: #ff6b35;
+    --warn: #ffd60a;
+    --text: #e8e8f0;
+    --muted: #666680;
+    --done: #00ff9d;
+    --current: #7b61ff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,255,157,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,157,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 50px;
+    animation: fadeDown 0.8s ease;
+  }
+
+  .badge {
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 4px 14px;
+    border-radius: 2px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-size: clamp(30px, 6vw, 50px);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+  }
+
+  h1 span { color: var(--accent); }
+
+  .subtitle {
+    color: var(--muted);
+    font-size: 14px;
+    font-family: 'Space Mono', monospace;
+    line-height: 1.7;
+  }
+
+  .stats {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 40px;
+    animation: fadeUp 0.8s ease 0.2s both;
+  }
+
+  .stat {
+    flex: 1;
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 16px;
+    text-align: center;
+  }
+
+  .stat:first-child { border-radius: 8px 0 0 8px; }
+  .stat:last-child { border-radius: 0 8px 8px 0; }
+
+  .stat-num {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--accent);
+    font-family: 'Space Mono', monospace;
+  }
+
+  .stat-label {
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* Progress bar */
+  .progress-wrap {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 40px;
+  }
+  .progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .progress-label span { color: var(--accent); }
+  .progress-bar {
+    height: 8px;
+    background: #1e1e2e;
+    border-radius: 99px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    width: 33%;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    border-radius: 99px;
+    transition: width 0.6s ease;
+  }
+
+  .month-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 50px 0 20px;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .month-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    background: rgba(0,255,157,0.1);
+    border: 1px solid rgba(0,255,157,0.3);
+    padding: 6px 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  .month-title {
+    font-size: 19px;
+    font-weight: 700;
+  }
+
+  .month-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* Topic card */
+  .topic-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 14px;
+    overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+    animation: fadeUp 0.5s ease both;
+    cursor: pointer;
+  }
+
+  .topic-card:hover { border-color: var(--accent2); transform: translateX(4px); }
+  .topic-card.done { border-color: rgba(0,255,157,0.35); }
+  .topic-card.done:hover { border-color: var(--accent); }
+  .topic-card.current { border-color: rgba(123,97,255,0.5); box-shadow: 0 0 18px rgba(123,97,255,0.1); }
+  .topic-card.current:hover { border-color: var(--accent2); }
+  .topic-card.hidden-gem { border-color: rgba(255,107,53,0.4); }
+  .topic-card.hidden-gem:hover { border-color: var(--accent3); }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+  }
+
+  .topic-icon { font-size: 20px; flex-shrink: 0; }
+  .topic-info { flex: 1; }
+
+  .topic-name {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 3px;
+  }
+
+  .topic-desc {
+    font-size: 12px;
+    color: var(--muted);
+    font-family: 'Space Mono', monospace;
+  }
+
+  .tags { display: flex; gap: 5px; flex-wrap: wrap; }
+
+  .tag {
+    font-size: 10px;
+    font-family: 'Space Mono', monospace;
+    padding: 3px 7px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+
+  .tag-normal { background: rgba(123,97,255,0.15); color: var(--accent2); border: 1px solid rgba(123,97,255,0.3); }
+  .tag-hidden { background: rgba(255,107,53,0.15); color: var(--accent3); border: 1px solid rgba(255,107,53,0.3); }
+  .tag-critical { background: rgba(255,214,10,0.15); color: var(--warn); border: 1px solid rgba(255,214,10,0.3); }
+  .tag-done { background: rgba(0,255,157,0.12); color: var(--accent); border: 1px solid rgba(0,255,157,0.3); }
+  .tag-current { background: rgba(123,97,255,0.2); color: #a89fff; border: 1px solid rgba(123,97,255,0.4); }
+
+  .card-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.45s ease;
+  }
+
+  .card-body.open { max-height: 1400px; border-top: 1px solid var(--border); }
+
+  .card-body-inner { padding: 18px 20px; }
+
+  /* Sololearn lessons list */
+  .sl-section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--accent2);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .sl-lessons {
+    list-style: none;
+    margin-bottom: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 10px;
+  }
+
+  @media(max-width:520px){ .sl-lessons { grid-template-columns: 1fr; } }
+
+  .sl-lessons li {
+    font-size: 13px;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 8px;
+    border-radius: 5px;
+    background: rgba(255,255,255,0.02);
+    line-height: 1.4;
+  }
+
+  .sl-lessons li.done-item { color: var(--accent); }
+  .sl-lessons li.done-item::before { content: '✓'; color: var(--accent); font-size: 11px; flex-shrink:0; }
+  .sl-lessons li.current-item { color: #a89fff; font-weight: 700; }
+  .sl-lessons li.current-item::before { content: '▶'; color: var(--accent2); font-size: 10px; flex-shrink:0; }
+  .sl-lessons li.locked-item { color: var(--muted); }
+  .sl-lessons li.locked-item::before { content: '○'; color: var(--border); font-size: 11px; flex-shrink:0; }
+
+  .divider { height: 1px; background: var(--border); margin: 16px 0; }
+
+  /* Hidden gems inside topic */
+  .gem-inside {
+    background: rgba(255,107,53,0.05);
+    border: 1px solid rgba(255,107,53,0.2);
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+  }
+
+  .gem-inside-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent3);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .gem-inside-body {
+    font-size: 12px;
+    color: var(--muted);
+    font-family: 'Space Mono', monospace;
+    line-height: 1.7;
+  }
+
+  .why-box {
+    background: rgba(0,255,157,0.05);
+    border-left: 3px solid var(--accent);
+    padding: 11px 14px;
+    border-radius: 0 6px 6px 0;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-top: 12px;
+  }
+
+  .why-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    color: var(--accent);
+  }
+
+  .code-block {
+    background: #0d0d14;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px 14px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: #a8b3cf;
+    margin-top: 12px;
+    overflow-x: auto;
+    line-height: 1.8;
+  }
+
+  .code-block .kw { color: #7b61ff; }
+  .code-block .str { color: #00ff9d; }
+  .code-block .fn { color: #ffd60a; }
+  .code-block .cm { color: #444466; }
+
+  .search-tip {
+    background: rgba(0,255,157,0.04);
+    border: 1px dashed rgba(0,255,157,0.2);
+    border-radius: 6px;
+    padding: 9px 12px;
+    margin-top: 10px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  .search-tip span { color: var(--accent); font-weight: 700; }
+
+  .chevron {
+    display: inline-block;
+    transition: transform 0.3s;
+    color: var(--muted);
+    font-size: 11px;
+    margin-left: 8px;
+    flex-shrink: 0;
+  }
+
+  .chevron.open { transform: rotate(180deg); color: var(--accent); }
+
+  /* Global hidden gems section */
+  .gems-header {
+    text-align: center;
+    margin: 60px 0 24px;
+  }
+
+  .gems-badge {
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--accent3);
+    border: 1px solid var(--accent3);
+    padding: 4px 14px;
+    border-radius: 2px;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+  }
+
+  .gems-title { font-size: 24px; font-weight: 800; margin-bottom: 6px; }
+
+  .gems-subtitle {
+    font-size: 12px;
+    color: var(--muted);
+    font-family: 'Space Mono', monospace;
+    line-height: 1.6;
+  }
+
+  .timeline-dot {
+    width: 9px; height: 9px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin: 0 auto 8px;
+    box-shadow: 0 0 12px var(--accent);
+  }
+
+  .timeline-line {
+    width: 1px; height: 28px;
+    background: linear-gradient(var(--accent), transparent);
+    margin: 0 auto 18px;
+  }
+
+  .cta-box {
+    background: linear-gradient(135deg, rgba(0,255,157,0.08), rgba(123,97,255,0.08));
+    border: 1px solid rgba(0,255,157,0.3);
+    border-radius: 12px;
+    padding: 32px;
+    text-align: center;
+    margin-top: 56px;
+  }
+
+  .cta-box h3 { font-size: 20px; font-weight: 800; margin-bottom: 12px; }
+
+  .cta-box p {
+    color: var(--muted);
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.2s; }
+  .delay-3 { animation-delay: 0.3s; }
+  .delay-4 { animation-delay: 0.4s; }
+  .delay-5 { animation-delay: 0.5s; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="badge">🎯 Updated Roadmap v2</div>
+    <h1><span>Phase 1</span> Syllabus<br>Zero → Solid Python</h1>
+    <p class="subtitle">Synced dengan Sololearn "Python Developer" path<br>Sub-topics + Hidden Gems setiap topic — jalan ke AI/ML Engineer</p>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Months</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">12</div>
+      <div class="stat-label">Weeks</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">45m</div>
+      <div class="stat-label">Per Day</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">~33%</div>
+      <div class="stat-label">Progress</div>
+    </div>
+  </div>
+
+  <!-- Progress bar -->
+  <div class="progress-wrap">
+    <div class="progress-label">
+      <span>Phase 1 Progress</span>
+      <span>~33% — Module 3 dimulakan</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill"></div>
+    </div>
+  </div>
+
+  <!-- MONTH 1 -->
+  <div class="month-header delay-1">
+    <span class="month-num">MONTH 01</span>
+    <span class="month-title">Python Basics & Data Fundamentals</span>
+    <div class="month-line"></div>
+  </div>
+
+  <!-- Topic 1: Getting Started with Python ✅ -->
+  <div class="topic-card done delay-1" onclick="toggle(this)">
+    <div class="card-header">
+      <span class="topic-icon">🐍</span>
+      <div class="topic-info">
+        <div class="topic-name">Getting Started with Python</div>
+        <div class="topic-desc">Module 1 — Sololearn "Python Developer"</div>
+      </div>
+      <div class="tags">
+        <span class="tag tag-done">✓ Completed</span>
+        <span class="tag tag-normal">Foundation</span>
+      </div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="card-body">
+      <div class="card-body-inner">
+        <div class="sl-section-label">📱 Sololearn Lessons</div>
+        <ul class="sl-lessons">
+          <li class="done-item">Writing Code</li>
+          <li class="done-item">Memory &amp; Variables</li>
+          <li class="done-item">Text Data</li>
+          <li class="done-item">Numerical Data</li>
+          <li class="done-item">Working with Variables</li>
+          <li class="done-item">Module 1 Quiz</li>
+          <li class="done-item">Practice: Game Messages</li>
+          <li class="done-item">Practice: Shopping Prices</li>
+          <li class="done-item">Practice: The Semester Grade</li>
+        </ul>
+        <div class="divider"></div>
+        <div class="sl-section-label">🔥 Hidden Gem untuk Topic Ini</div>
+        <div class="gem-inside">
+          <div class="gem-inside-title">💭 Pseudocode sebelum type kod</div>
+          <div class="gem-inside-body">Sebelum tulis sebarang kod, tulis dulu dalam bahasa biasa apa yang nak dibuat. Contoh: "ambil nama user → simpan dalam variable → print salam". Ini habit programmer senior — bukan junior.</div>
+        </div>
+        <div class="gem-inside">
+          <div class="gem-inside-title">✍️ Penamaan variable yang betul</div>
+          <div class="gem-inside-body">Jangan guna x, a, b. Guna nama yang bermakna: student_name, total_price, is_logged_in. Ini yang beza kod amateur vs professional dari hari pertama.</div>
+        </div>
+        <div class="why-box">
+          <div class="why-label">⚡ Kenapa penting</div>
+          Ni asas mutlak. Kalau variable & print tak kukuh, semua topic lepas ni akan rasa susah. Kau dah habis ini — bagus!
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Topic 2: Going Deeper with Python ✅ -->
+  <div class="topic-card done delay-2" onclick="toggle(this)">
+    <div class="card-header">
+      <span class="topic-icon">⚙️</span>
+      <div class="topic-info">
+        <div class="topic-name">Going Deeper with Python</div>
+        <div class="topic-desc">Module 2 — Debugging, Best Practices, Input/Output</div>
+      </div>
+      <div class="tags">
+        <span class="tag tag-done">✓ Completed</span>
+        <span class="tag tag-normal">Foundation</span>
+      </div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="card-body">
+      <div class="card-body-inner">
+        <div class="sl-section-label">📱 Sololearn Lessons</div>
+        <ul class="sl-lessons">
+          <li class="done-item">Debugging</li>
+          <li class="done-item">Standards and Best Practices</li>
+          <li class="done-item">Applying Best Practices</li>
+          <li class="done-item">Inputs and Outputs</li>
+          <li class="done-item">Data Types</li>
+          <li class="done-item">Module 2 Quiz</li>
+          <li class="done-item">Practice: And the Winner is…</li>
+          <li class="done-item">Practice: Flight Tracker</li>
+          <li class="done-item">Practice: Snowflake</li>
+          <li class="done-item">Practice: It's Payday!</li>
+          <li class="done-item">Practice: Chatbot v1.0</li>
+          <li class="done-item">Practice: Messaging App</li>
+          <li class="done-item">Practice: Chatbot v1.1</li>
+        </ul>
+        <div class="divider"></div>
+        <div class="sl-section-label">🔥 Hidden Gem untuk Topic Ini</div>
+        <div class="gem-inside">
+          <div class="gem-inside-title">🔍 Cara betul debug — bukan main agak je</div>
+          <div class="gem-inside-body">Bila ada error: (1) Baca error message dari atas ke bawah. (2) Cari baris nombor yang disebutkan. (3) Google exact error message + "Python". Jangan terus tanya orang — cuba 15 minit dulu sendiri.</div>
+        </div>
+        <div class="gem-inside">
+          <div class="gem-inside-title">📖 Cara baca Documentation Python</div>
+          <div class="gem-inside-body">Gi docs.python.org — ini manual rasmi. Setiap function ada bahagian: Parameters (input apa), Returns (output apa), Examples (contoh guna). Programmer yang boleh baca docs boleh belajar library baru dalam sehari.</div>
+        </div>
+        <div class="why-box">
+          <div class="why-label">⚡ Kenapa penting</div>
+          90% masa programmer sebenar dihabiskan debug — bukan tulis kod baru. Kau dah belajar ini awal — advantage besar!
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Topic 3: Working with Data 🔵 CURRENT -->
+  <div class="topic-card current delay-3" onclick="toggle(this)">
+    <div class="card-header">
+      <span class="topic-icon">📊</span>
+      <div class="topic-info">
+        <div class="topic-name">Variables & Data Types — Working with Data</div>
+        <div class="topic-desc">Module 3 — Data types, conversion, comparison</div>
+      </div>
+      <div class="tags">
+        <span class="tag tag-current">▶ In Progress</span>
+        <span class="tag tag-critical">Critical for ML</span>
+      </div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="card-body">
+      <div class="card-body-inner">
+        <div class="sl-section-label">📱 Sololearn Lessons</div>
+        <ul class="sl-lessons">
+          <li class="done-item">Data Type Checking</li>
+          <li class="done-item">Data Conversion</li>
+          <li class="done-item">Fixing Data Types</li>
+          <li class="done-item">Practice: Finance App</li>
+          <li class="done-item">Practice: Chess Tournament</li>
+          <li class="current-item">Comparison Operations ← KINI DI SINI</li>
+          <li class="locked-item">Practice: Level Up!</li>
+          <li class="locked-item">Conditional Statements</li>
+          <li class="locked-item">Practice: Driving License</li>
+          <li class="locked-item">Logical Operators</li>
+          <li class="locked-item">Practice: School Grade</li>
+          <li class="locked-item">Module 3 Quiz</li>
+        </ul>
+        <div class="divider"></div>
+        <div class="sl-section-label">🔥 Hidden Gem untuk Topic Ini</div>
+        <div class="gem-inside">
+          <div class="gem-inside-title">🧮 Type checking dalam ML — bukan sekadar asas</div>
+          <div class="gem-inside-body">Dalam AI/ML, data dari CSV selalu masuk sebagai string walaupun ia nombor. Kalau tak convert betul, model kau akan error atau bagi hasil salah. type(), int(), float(), str() — ni tools paling penting dalam data cleaning.</div>
+        </div>
+        <div class="gem-inside">
+          <div class="gem-inside-title">⚖️ == vs = — ramai beginner silap ni</div>
+          <div class="gem-inside-body">= adalah assign nilai (x = 5). == adalah compare nilai (x == 5 → True/False). Silap sini boleh buat program bagi output salah tapi tak ada error — paling bahaya.</div>
+      </div>
+        <div class="code-block">
+          <span class="cm"># Type checking & conversion</span><br>
+          age = <span class="str">"25"</span> <span class="cm"># ini string!</span><br>
+          age = <span class="fn">int</span>(age) <span class="cm"># tukar jadi integer</span><br>
+          <span class="fn">print</span>(<span class="fn">type</span>(age)) <span class="cm"># &lt;class 'int'&gt;</span><br><br>
+          <span class="cm"># Comparison</span><br>
+          <span class="fn">print</span>(age == <span class="str">25</span>) <span class="cm"># True</span><br>
+          <span class="fn">print</span>(age > <span class="str">18</span>)  <span class="cm"># True</span>
+        </div>
+        <div class="why-box">
+          <div class="why-label">⚡ Kenapa critical untuk ML</div>
+          Dalam data science, 80% masa dihabiskan untuk clean & convert data. Kalau kau faham data types dari sekarang, kau dah selangkah lebih ke hadapan.
+        </div>
+        <div class="search-tip">🔍 Search: <span>"Python type conversion and comparison operators"</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MONTH 2 -->
+  <div class="month-header delay-1" style="margin-top:50px;">
+    <span class="month-num">MONTH 02</span>
+    <span class="month-title">Control Flow, Functions & Data Structures</span>
+    <div class="month-line"></div>
+  </div>
+
+  <!-- Topic 4: Conditional Logic -->
+  <div class="topic-card delay-2" onclick="toggle(this)">
+    <div class="card-header">
+      <span class="topic-icon">🔀</span>
+      <div class="topic-info">
+        <div class="topic-name">Conditional Logic — If / Else</div>
+        <div class="topic-desc">Module 3 (lanjutan) — Making decisions in code</div>
+      </div>
+      <div class="tags">
+        <span class="tag tag-normal">Next Up</span>
+        <span class="tag tag-normal">Foundation</span>
+      </div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="card-body">
+      <div class="card-body-inner">
+        <div class="sl-section-label">📱 Sololearn Lessons (coming up)</div>
+        <ul class="sl-lessons">
+          <li class="locked-item">Conditional Statements</li>
+          <li class="locked-item">Logical Operators</li>
+          <li class="locked-item">Practice: Driving License</li>
+          <li class="locked-item">Practice: School Grade</li>
+          <li class="locked-item">if / elif / else</li>
+          <li class="locked-item">Nested Conditionals</li>
+          <li class="locked-item">Module 3 Quiz</li>
+        </ul>
+        <div class="divider"></div>
+        <div class="sl-section-label">🔥 Hidden Gem untuk Topic Ini</div>
+        <div class="gem-inside">
+          <div class="gem-inside-title">🌳 Decision tree thinking</div>
+          <div class="gem-inside-body">Sebelum tulis if/else, lukis decision tree dulu atas kertas: "kalau A → buat X, kalau B → buat Y". Ini cara ML models berfikir — dan cara programmer senior design logic sebelum code.</div>
+        </div>
+        <div class="gem-inside">
+          <div class="gem-inside-title">⚡ Short-circuit evaluation</div>
+          <div class="gem-inside-body">Python stop evaluate lebih awal kalau dah tahu jawapan. "False and ..." — Python skip yang kedua. "True or ..." — Python skip yang kedua. Faham ini = tulis code yang lebih efficient.</div>
+        </div>
+        <div class="code-block">
+          <span class="kw">if</span> age >= <span class="str">18</span> <span class="kw">and</span> has_ic:<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(<span class="str">"Boleh mengundi"</span>)<br>
+          <span class="kw">elif</span> age >= <span class="str">12</span>:<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(<span class="str">"Pelajar sekolah"</span>)<br>
+          <span class="kw">else</span>:<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(<span class="str">"Budak kecil"</span>)
+        </div>
+        <div class="search-tip">🔍 Search: <span>"Python if elif else tutorial beginners"</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Topic 5: Loops -->
+  <div class="topic-card delay-3" onclick="toggle(this)">
+    <div class="card-header">
+      <span class="topic-icon">🔁</span>
+      <div class="topic-info">
+        <div class="topic-name">Loops — Automate Repetitive Tasks</div>
+        <div class="topic-desc">Module 4 — The real power of programming</div>
+      </div>
+      <div class="tags">
+        <span class="tag tag-normal">Foundation</span>
+        <span class="tag tag-critical">Critical for AI</span>
+      </div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="card-body">
+      <div class="card-body-inner">
+        <div class="sl-section-label">📱 Sololearn Lessons</div>
+        <ul class="sl-lessons">
+          <li class="locked-item">for loop</li>
+          <li class="locked-item">while loop</li>
+          <li class="locked-item">range()</li>
+          <li class="locked-item">break &amp; continue</li>
+          <li class="locked-item">Nested loops</li>
+          <li class="locked-item">Loop with else</li>
+          <li class="locked-item">Practice: Multiplication Table</li>
+          <li class="locked-item">Practice: Pattern Printing</li>
+          <li class="locked-item">Module 4 Quiz</li>
+        </ul>
+        <div class="divider"></div>
+        <div class="sl-section-label">🔥 Hidden Gem untuk Topic Ini</div>
+        <div class="gem-inside">
+          <div class="gem-inside-title">🔄 enumerate() — ramai tak ajar ini</div>
+          <div class="gem-inside-body">Bila loop list, selalu nak tahu index sekali. Jangan tulis counter sendiri — guna enumerate(). Ini standard cara kerja ML programmer bila process dataset rows.</div>
+        </div>
+        <div class="gem-inside">
+          <div class="gem-inside-title">⏱️ Jangan buat infinite loop secara tak sengaja</div>
+          <div class="gem-inside-body">while loop paling selalu menyebabkan program stuck. Selalu pastikan ada kondisi yang akan jadi False, atau ada break. Dalam ML training loops, ini kritikal.</div>
+        </div>
+        <div class="code-block">
+          <span class="cm"># enumerate — cara pro</span><br>
+          fruits = [<span class="str">"apple"</span>, <span class="str">"mango"</span>, <span class="str">"durian"</span>]<br>
+          <span class="kw">for</span> i, fruit <span class="kw">in</span> <span class="fn">enumerate</span>(fruits):<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(i, fruit)<br>
+          <span class="cm"># 0 apple / 1 mango / 2 durian</span>
+        </div>
+        <div class="why-box">
+          <div class="why-label">⚡ Kenapa critical untuk AI</div>
+          ML memproses ribuan baris data. Loops adalah cara Python ulang proses tu. Tanpa faham loops, kau tak akan faham training ML models langsung.
+        </div>
+        <div class="search-tip">🔍 Search: <span>"Python for loop while loop beginners"</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Topic 6: Functions -->
+  <div class="topic-card delay-4" onclick="toggle(this)">
+    <div class="card-header">
+      <span class="topic-icon">🧩</span>
+      <div class="topic-info">
+        <div class="topic-name">Functions — Build Your Own Machines</div>
+        <div class="topic-desc">Module 5 — Reuse code without rewriting it</div>
+      </div>
+      <div class="tags">
+        <span class="tag tag-normal">Important</span>
+      </div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="card-body">
+      <div class="card-body-inner">
+        <div class="sl-section-label">📱 Sololearn Lessons</div>
+        <ul class="sl-lessons">
+          <li class="locked-item">def keyword</li>
+          <li class="locked-item">Parameters &amp; Arguments</li>
+          <li class="locked-item">Return values</li>
+          <li class="locked-item">Default parameters</li>
+          <li class="locked-item">Scope — local vs global</li>
+          <li class="locked-item">Multiple return values</li>
+          <li class="locked-item">Practice: Area Calculator</li>
+          <li class="locked-item">Practice: Password Checker</li>
+          <li class="locked-item">Module 5 Quiz</li>
+        </ul>
+        <div class="divider"></div>
+        <div class="sl-section-label">🔥 Hidden Gem untuk Topic Ini</div>
+        <div class="gem-inside">
+          <div class="gem-inside-title">📐 Single Responsibility Principle</div>
+          <div class="gem-inside-body">Satu function, satu kerja sahaja. Kalau function kau buat 5 benda sekaligus — pecahkan. Dalam ML, setiap step (load data, clean data, train model) patut jadi function berasingan. Ini yang beza kod berantakan vs kod bersih.</div>
+        </div>
+        <div class="gem-inside">
+          <div class="gem-inside-title">📝 Docstring — dokumentasi function kau sendiri</div>
+          <div class="gem-inside-body">Tulis keterangan pendek dalam function guna tiga petik. Bila orang (atau kau sendiri 3 bulan lepas) baca balik kod, terus faham apa function tu buat tanpa kena trace satu-satu.</div>
+        </div>
+        <div class="code-block">
+          <span class="kw">def</span> <span class="fn">kira_bmi</span>(berat, tinggi):<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"""Kira BMI. berat=kg, tinggi=meter"""</span><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> berat / (tinggi ** <span class="str">2</span>)<br><br>
+          bmi = <span class="fn">kira_bmi</span>(<span class="str">70</span>, <span class="str">1.75</span>)<br>
+          <span class="fn">print</span>(bmi) <span class="cm"># 22.86</span>
+        </div>
+        <div class="search-tip">🔍 Search: <span>"Python functions parameters return explained"</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MONTH 3 -->
+  <div class="month-header delay-1" style="margin-top:50px;">
+    <span class="month-num">MONTH 03</span>
+    <span class="month-title">Data Structures, Files & First Projects</span>
+    <div class="month-line"></div>
+  </div>
+
+  <!-- Topic 7: Lists & Dictionaries -->
+  <div class="topic-card delay-2" onclick="toggle(this)">
+    <div class="card-header">
+      <span class="topic-icon">📋</span>
+      <div class="topic-info">
+        <div class="topic-name">Lists, Tuples & Dictionaries</div>
+        <div class="topic-desc">Module 6 — Store and manage large amounts of data</div>
+      </div>
+      <div class="tags">
+        <span class="tag tag-normal">Important</span>
+        <span class="tag tag-critical">Critical for ML</span>
+      </div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="card-body">
+      <div class="card-body-inner">
+        <div class="sl-section-label">📱 Sololearn Lessons</div>
+        <ul class="sl-lessons">
+          <li class="locked-item">Lists — ordered collection</li>
+          <li class="locked-item">Indexing &amp; Slicing</li>
+          <li class="locked-item">List methods: append, remove, sort</li>
+          <li class="locked-item">Tuples — immutable lists</li>
+          <li class="locked-item">Dictionaries — key-value pairs</li>
+          <li class="locked-item">Looping through lists &amp; dicts</li>
+          <li class="locked-item">List comprehension</li>
+          <li class="locked-item">Practice: Shopping Cart</li>
+          <li class="locked-item">Practice: Student Records</li>
+          <li class="locked-item">Module 6 Quiz</li>
+        </ul>
+        <div class="divider"></div>
+        <div class="sl-section-label">🔥 Hidden Gem untuk Topic Ini</div>
+        <div class="gem-inside">
+          <div class="gem-inside-title">⚡ List comprehension — kod 1 baris vs 4 baris</div>
+          <div class="gem-inside-body">Ramai skip ini tapi ia cara paling Pythonic untuk transform data. Dalam data science, ini digunakan masa nak filter atau transform rows dataset dengan cepat dan bersih.</div>
+        </div>
+        <div class="gem-inside">
+          <div class="gem-inside-title">🗂️ Dictionary adalah asas JSON & API</div>
+          <div class="gem-inside-body">Semua AI API (OpenAI, Anthropic dll) hantar & terima data dalam format JSON — yang dalam Python nampak macam dictionary. Kalau kau pro dalam dict, kau dah half-ready handle real AI APIs.</div>
+        </div>
+        <div class="code-block">
+          <span class="cm"># List comprehension</span><br>
+          marks = [<span class="str">45</span>, <span class="str">72</span>, <span class="str">89</span>, <span class="str">33</span>, <span class="str">91</span>]<br>
+          lulus = [m <span class="kw">for</span> m <span class="kw">in</span> marks <span class="kw">if</span> m >= <span class="str">50</span>]<br>
+          <span class="fn">print</span>(lulus) <span class="cm"># [72, 89, 91]</span>
+        </div>
+        <div class="why-box">
+          <div class="why-label">⚡ Kenapa critical untuk ML</div>
+          Dataset AI adalah collection data yang besar. Lists & dictionaries adalah asas sebelum belajar Pandas dan NumPy — dua library paling penting dalam data science.
+        </div>
+        <div class="search-tip">🔍 Search: <span>"Python lists dictionaries full tutorial"</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Topic 8: Error Handling -->
+  <div class="topic-card delay-3" onclick="toggle(this)">
+    <div class="card-header">
+      <span class="topic-icon">🛡️</span>
+      <div class="topic-info">
+        <div class="topic-name">Error Handling & Exception</div>
+        <div class="topic-desc">Module 7 — Write code that doesn't crash</div>
+      </div>
+      <div class="tags">
+        <span class="tag tag-normal">Important</span>
+      </div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="card-body">
+      <div class="card-body-inner">
+        <div class="sl-section-label">📱 Sololearn Lessons</div>
+        <ul class="sl-lessons">
+          <li class="locked-item">try / except</li>
+          <li class="locked-item">Common errors: TypeError, ValueError</li>
+          <li class="locked-item">KeyError, IndexError</li>
+          <li class="locked-item">finally block</li>
+          <li class="locked-item">Raising exceptions</li>
+          <li class="locked-item">Practice: Safe Calculator</li>
+          <li class="locked-item">Module 7 Quiz</li>
+        </ul>
+        <div class="divider"></div>
+        <div class="sl-section-label">🔥 Hidden Gem untuk Topic Ini</div>
+        <div class="gem-inside">
+          <div class="gem-inside-title">🔬 Specific exception vs broad except</div>
+          <div class="gem-inside-body">Jangan tulis "except:" je (tangkap semua). Tulis "except ValueError:" — specific. Kalau kau tangkap semua error, bugs tersembunyi dan susah nak debug. Ini common mistake yang senior engineers akan notice terus.</div>
+        </div>
+        <div class="gem-inside">
+          <div class="gem-inside-title">🤖 Kenapa critical dalam AI pipelines</div>
+          <div class="gem-inside-body">Data real-world selalu ada baris yang rosak, kosong, atau format salah. Tanpa error handling, satu baris data yang bad boleh crash keseluruhan training process kau yang ambil berjam-jam.</div>
+        </div>
+        <div class="search-tip">🔍 Search: <span>"Python try except error handling tutorial"</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Topic 9: Files -->
+  <div class="topic-card delay-4" onclick="toggle(this)">
+    <div class="card-header">
+      <span class="topic-icon">📁</span>
+      <div class="topic-info">
+        <div class="topic-name">Reading & Writing Files</div>
+        <div class="topic-desc">Module 8 — Load and save data from files</div>
+      </div>
+      <div class="tags">
+        <span class="tag tag-normal">Important</span>
+        <span class="tag tag-critical">Critical for ML</span>
+      </div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="card-body">
+      <div class="card-body-inner">
+        <div class="sl-section-label">📱 Sololearn Lessons</div>
+        <ul class="sl-lessons">
+          <li class="locked-item">open() — read &amp; write files</li>
+          <li class="locked-item">with statement</li>
+          <li class="locked-item">Reading .txt files</li>
+          <li class="locked-item">Writing &amp; appending files</li>
+          <li class="locked-item">Reading CSV files</li>
+          <li class="locked-item">Importing modules</li>
+          <li class="locked-item">Practice: Note Saver</li>
+          <li class="locked-item">Module 8 Quiz</li>
+        </ul>
+        <div class="divider"></div>
+        <div class="sl-section-label">🔥 Hidden Gem untuk Topic Ini</div>
+        <div class="gem-inside">
+          <div class="gem-inside-title">📊 CSV adalah bahasa data science</div>
+          <div class="gem-inside-body">Hampir semua dataset ML dalam format CSV. Bila kau boleh baca CSV dengan Python, kau dah boleh mula experiment dengan data sebenar — Titanic dataset, Iris dataset, semua dalam CSV.</div>
+        </div>
+        <div class="gem-inside">
+          <div class="gem-inside-title">🔒 Selalu guna "with" — bukan open() biasa</div>
+          <div class="gem-inside-body">"with open(...) as f:" auto-close file lepas guna. Open() biasa boleh sebabkan memory leak kalau lupa close(). Ini best practice yang hampir semua tutorial lama tak ajar.</div>
+        </div>
+        <div class="search-tip">🔍 Search: <span>"Python read write CSV files tutorial"</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Topic 10: Capstone Projects -->
+  <div class="topic-card delay-5" onclick="toggle(this)">
+    <div class="card-header">
+      <span class="topic-icon">🚀</span>
+      <div class="topic-info">
+        <div class="topic-name">3 Capstone Mini Projects</div>
+        <div class="topic-desc">Week 10–12 — Portfolio kau bermula di sini</div>
+      </div>
+      <div class="tags">
+        <span class="tag tag-critical">Must Complete</span>
+      </div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="card-body">
+      <div class="card-body-inner">
+        <div class="sl-section-label">🎯 3 Projects Wajib</div>
+        <ul class="sl-lessons">
+          <li class="locked-item">Project 1: BMI Calculator — input, calculate, output dengan kategori</li>
+          <li class="locked-item">Project 2: Number Guessing Game — loops, conditionals &amp; random</li>
+          <li class="locked-item">Project 3: Mini Note-Saving System — files, lists &amp; dictionaries</li>
+        </ul>
+        <div class="divider"></div>
+        <div class="sl-section-label">🔥 Hidden Gem untuk Topic Ini</div>
+        <div class="gem-inside">
+          <div class="gem-inside-title">📂 Upload ke GitHub — ini portfolio kau</div>
+          <div class="gem-inside-body">Bila habis setiap project, upload ke GitHub. GitHub adalah resume programmer. Bila apply kerja atau freelance, orang tengok GitHub dulu sebelum CV. Mula awal, mula dari Phase 1.</div>
+        </div>
+        <div class="gem-inside">
+          <div class="gem-inside-title">📝 Tulis README untuk setiap project</div>
+          <div class="gem-inside-body">README = penerangan project. Tulis: apa yang dibuat, cara guna, apa yang dipelajari. Ini tanda programmer yang professional — bukan sekadar letak kod je.</div>
+        </div>
+        <div class="why-box">
+          <div class="why-label">⚡ Kenapa projects lebih penting dari sijil</div>
+          Employers & clients tengok apa yang kau bina — bukan course yang kau habiskan. 3 projects = 3 bukti kau boleh code.
+        </div>
+        <div class="search-tip">🔍 Search: <span>"Python beginner projects with source code GitHub"</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GLOBAL HIDDEN GEMS -->
+  <div class="gems-header">
+    <div class="timeline-dot"></div>
+    <div class="timeline-line"></div>
+    <div class="gems-badge">🔥 GLOBAL HIDDEN GEMS</div>
+    <div class="gems-title">Skills Yang Kolej Selalu Skip</div>
+    <div class="gems-subtitle">Tapi ini yang beza programmer biasa<br>dengan programmer yang skill dia mahal dihire</div>
+  </div>
+
+  <div class="topic-card hidden-gem delay-1" onclick="toggle(this)">
+    <div class="card-header">
+      <span class="topic-icon">🧮</span>
+      <div class="topic-info">
+        <div class="topic-name">Essential Math untuk AI Programmers</div>
+        <div class="topic-desc">Belajar selari dengan coding — bukan nanti-nanti</div>
+      </div>
+      <div class="tags">
+        <span class="tag tag-hidden">Hidden Gem</span>
+        <span class="tag tag-critical">Critical for AI</span>
+      </div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="card-body">
+      <div class="card-body-inner">
+        <ul class="sl-lessons" style="grid-template-columns:1fr;">
+          <li class="locked-item">Modulo (%) — digunakan selalu dalam programming logic</li>
+          <li class="locked-item">Statistics asas: mean, median, max, min — foundation ML</li>
+          <li class="locked-item">Coordinates & graphs — essential untuk visualize data</li>
+          <li class="locked-item">Basic probability — AI models guna ini dalam setiap prediction</li>
+          <li class="locked-item">Basic algebra — faham formula dalam ML libraries</li>
+        </ul>
+        <div class="why-box">
+          <div class="why-label">⚡ Kenapa critical untuk AI</div>
+          AI bukan magic — ia math. Kalau tak faham fundamentals, kau boleh guna AI libraries tapi tak akan faham kenapa model kau fail atau macam mana nak improve. Math = beza copy-paste coder vs real AI engineer.
+        </div>
+        <div class="search-tip">🔍 Search: <span>"math for machine learning beginners"</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-card hidden-gem delay-2" onclick="toggle(this)">
+    <div class="card-header">
+      <span class="topic-icon">🌐</span>
+      <div class="topic-info">
+        <div class="topic-name">Git & GitHub — Version Control dari Hari Pertama</div>
+        <div class="topic-desc">Setiap programmer professional guna ini — tapi selalu diajar lambat</div>
+      </div>
+      <div class="tags">
+        <span class="tag tag-hidden">Hidden Gem</span>
+        <span class="tag tag-critical">Career Skill</span>
+      </div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="card-body">
+      <div class="card-body-inner">
+        <ul class="sl-lessons" style="grid-template-columns:1fr;">
+          <li class="locked-item">Apa itu Git? — sistem simpan "history" kod kau</li>
+          <li class="locked-item">git init, git add, git commit — 3 command paling basic</li>
+          <li class="locked-item">GitHub — cloud storage untuk kod kau</li>
+          <li class="locked-item">git push — upload kod ke GitHub</li>
+          <li class="locked-item">README.md — penerangan project dalam GitHub</li>
+        </ul>
+        <div class="why-box">
+          <div class="why-label">⚡ Kenapa belajar sekarang</div>
+          GitHub adalah portfolio programmer. Mula upload projects dari Phase 1 — bukan tunggu "dah pandai". Bila recruiter atau client Google nama kau, GitHub yang dorang tengok dulu.
+        </div>
+        <div class="search-tip">🔍 Search: <span>"Git and GitHub tutorial for beginners 2024"</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-card hidden-gem delay-3" onclick="toggle(this)">
+    <div class="card-header">
+      <span class="topic-icon">💭</span>
+      <div class="topic-info">
+        <div class="topic-name">Pseudocode & Berfikir Sebelum Type</div>
+        <div class="topic-desc">Skill paling kritikal — hampir tak pernah diajar di sekolah</div>
+      </div>
+      <div class="tags">
+        <span class="tag tag-hidden">Hidden Gem</span>
+        <span class="tag tag-critical">Game Changer</span>
+      </div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="card-body">
+      <div class="card-body-inner">
+        <ul class="sl-lessons" style="grid-template-columns:1fr;">
+          <li class="locked-item">Tulis solution dalam bahasa biasa sebelum tulis kod</li>
+          <li class="locked-item">Pecah masalah besar kepada sub-masalah kecil</li>
+          <li class="locked-item">Lukis flowchart — diagram visual flow program kau</li>
+          <li class="locked-item">Selalu tanya: "Apa INPUT? Apa PROCESS? Apa OUTPUT?"</li>
+        </ul>
+        <div class="why-box">
+          <div class="why-label">🔥 Kenapa kolej skip ini</div>
+          Sekolah bagi assignment berstruktur: "code ini." Tapi dunia sebenar bagi masalah tak berstruktur. Programmer power fikir dulu, type kemudian. Senior engineer boleh identify orang yang tak ada skill ni — terus nampak.
+        </div>
+        <div class="search-tip">🔍 Search: <span>"pseudocode for beginners programming"</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <h3>🎯 Mission Kau Sekarang</h3>
+    <p>
+      Kau dah habis Module 1 &amp; 2 ✅<br>
+      Module 3 tengah berjalan — next lesson: <strong>Comparison Operations</strong><br><br>
+      Habiskan Module 3 → terus ke Module 4 (Loops)<br>
+      Setiap kali stuck — tanya. Kita selesaikan sama-sama. 💪
+    </p>
+  </div>
+
+</div>
+
+<script>
+  function toggle(card) {
+    const body = card.querySelector('.card-body');
+    const chevron = card.querySelector('.chevron');
+    const isOpen = body.classList.contains('open');
+    document.querySelectorAll('.card-body').forEach(b => b.classList.remove('open'));
+    document.querySelectorAll('.chevron').forEach(c => c.classList.remove('open'));
+    if (!isOpen) {
+      body.classList.add('open');
+      chevron.classList.add('open');
+    }
+  }
+</script>
+</body>
+</html>
