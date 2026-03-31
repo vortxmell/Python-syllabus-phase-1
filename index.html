@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Phase 1 Syllabus v2 — Road to AI Engineer</title>
+<title>Phase 1 Syllabus v3 — Road to AI Engineer</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap');
 
@@ -146,7 +146,7 @@
   }
   .progress-fill {
     height: 100%;
-    width: 50%;
+    width: 55%;
     background: linear-gradient(90deg, var(--accent), var(--accent2));
     border-radius: 99px;
     transition: width 0.6s ease;
@@ -492,6 +492,7 @@
   .badge-m1 { background: rgba(0,255,157,0.15); color: var(--accent); border: 1px solid rgba(0,255,157,0.3); }
   .badge-m2 { background: rgba(123,97,255,0.15); color: var(--accent2); border: 1px solid rgba(123,97,255,0.3); }
   .badge-m3 { background: rgba(255,214,10,0.15); color: var(--warn); border: 1px solid rgba(255,214,10,0.3); }
+  .badge-cf { background: rgba(255,107,53,0.15); color: var(--accent3); border: 1px solid rgba(255,107,53,0.3); }
 
   .nota-module-title { font-size: 17px; font-weight: 700; }
   .nota-module-line { flex: 1; height: 1px; background: var(--border); }
@@ -680,7 +681,7 @@
   <!-- SYLLABUS TAB -->
   <div id="tab-syllabus" class="tab-content active">
   <div class="header">
-    <div class="badge">🎯 Updated Roadmap v2</div>
+    <div class="badge">🎯 Updated Roadmap v3</div>
     <h1><span>Phase 1</span> Syllabus<br>Zero → Solid Python</h1>
     <p class="subtitle">Synced dengan Sololearn "Python Developer" path<br>Sub-topics + Hidden Gems setiap topic — jalan ke AI/ML Engineer</p>
   </div>
@@ -709,7 +710,7 @@
   <div class="progress-wrap">
     <div class="progress-label">
       <span>Phase 1 Progress</span>
-      <span>~50% — Module 4 selesai!</span>
+      <span>~55% — Control Flow selesai!</span>
     </div>
     <div class="progress-bar">
       <div class="progress-fill"></div>
@@ -819,8 +820,8 @@
     </div>
   </div>
 
-  <!-- Topic 3: Working with Data 🔵 CURRENT -->
-  <div class="topic-card current delay-3" onclick="toggle(this)">
+  <!-- Topic 3: Working with Data ✅ DONE -->
+  <div class="topic-card done delay-3" onclick="toggle(this)">
     <div class="card-header">
       <span class="topic-icon">📊</span>
       <div class="topic-info">
@@ -828,7 +829,7 @@
         <div class="topic-desc">Module 3 — Data types, conversion, comparison</div>
       </div>
       <div class="tags">
-        <span class="tag tag-current">▶ In Progress</span>
+        <span class="tag tag-done">✓ Completed</span>
         <span class="tag tag-critical">Critical for ML</span>
       </div>
       <span class="chevron">▼</span>
@@ -842,13 +843,13 @@
           <li class="done-item">Fixing Data Types</li>
           <li class="done-item">Practice: Finance App</li>
           <li class="done-item">Practice: Chess Tournament</li>
-          <li class="current-item">Comparison Operations ← KINI DI SINI</li>
-          <li class="locked-item">Practice: Level Up!</li>
-          <li class="locked-item">Conditional Statements</li>
-          <li class="locked-item">Practice: Driving License</li>
-          <li class="locked-item">Logical Operators</li>
-          <li class="locked-item">Practice: School Grade</li>
-          <li class="locked-item">Module 3 Quiz</li>
+          <li class="done-item">Comparison Operations</li>
+          <li class="done-item">Practice: Level Up!</li>
+          <li class="done-item">Conditional Statements</li>
+          <li class="done-item">Practice: Driving License</li>
+          <li class="done-item">Logical Operators</li>
+          <li class="done-item">Practice: School Grade</li>
+          <li class="done-item">Module 3 Quiz</li>
         </ul>
         <div class="divider"></div>
         <div class="sl-section-label">🔥 Hidden Gem untuk Topic Ini</div>
@@ -885,8 +886,8 @@
     <div class="month-line"></div>
   </div>
 
-  <!-- Topic 4: Conditional Logic -->
-  <div class="topic-card delay-2" onclick="toggle(this)">
+  <!-- Topic 4: Conditional Logic ✅ DONE -->
+  <div class="topic-card done delay-2" onclick="toggle(this)">
     <div class="card-header">
       <span class="topic-icon">🔀</span>
       <div class="topic-info">
@@ -894,23 +895,28 @@
         <div class="topic-desc">Module 3 (lanjutan) — Making decisions in code</div>
       </div>
       <div class="tags">
-        <span class="tag tag-normal">Next Up</span>
+        <span class="tag tag-done">✓ Completed</span>
         <span class="tag tag-normal">Foundation</span>
       </div>
       <span class="chevron">▼</span>
     </div>
     <div class="card-body">
       <div class="card-body-inner">
-        <div class="sl-section-label">📱 Sololearn Lessons (coming up)</div>
+        <div class="sl-section-label">📱 Sololearn Lessons ✅ Selesai</div>
         <ul class="sl-lessons">
-          <li class="locked-item">Conditional Statements</li>
-          <li class="locked-item">Logical Operators</li>
-          <li class="locked-item">Practice: Driving License</li>
-          <li class="locked-item">Practice: School Grade</li>
-          <li class="locked-item">if / elif / else</li>
-          <li class="locked-item">Nested Conditionals</li>
-          <li class="locked-item">Module 3 Quiz</li>
+          <li class="done-item">✓ Control Flow Basics (Sequencing, Iteration, Selection)</li>
+          <li class="done-item">✓ If / Else Statements</li>
+          <li class="done-item">✓ Logical Operators (and, or)</li>
+          <li class="done-item">✓ elif — else if</li>
+          <li class="done-item">✓ Nested If-Else</li>
+          <li class="done-item">✓ if tanpa else (skip else)</li>
+          <li class="done-item">✓ For Loops</li>
+          <li class="done-item">✓ While Loops</li>
+          <li class="done-item">✓ Iteration in Practice</li>
         </ul>
+        <div style="margin-top:10px; padding:8px 12px; background:rgba(255,107,53,0.08); border:1px solid rgba(255,107,53,0.25); border-radius:6px; font-size:12px; font-family:'Space Mono',monospace; color:#ff6b35;">
+          ⚠️ Belum belajar dalam Sololearn: break &amp; continue, loop with else, range() advanced
+        </div>
         <div class="divider"></div>
         <div class="sl-section-label">🔥 Hidden Gem untuk Topic Ini</div>
         <div class="gem-inside">
@@ -952,16 +958,20 @@
       <div class="card-body-inner">
         <div class="sl-section-label">📱 Sololearn Lessons</div>
         <ul class="sl-lessons">
-          <li class="locked-item">for loop</li>
-          <li class="locked-item">while loop</li>
-          <li class="locked-item">range()</li>
-          <li class="locked-item">break &amp; continue</li>
-          <li class="locked-item">Nested loops</li>
-          <li class="locked-item">Loop with else</li>
+          <li class="done-item">✓ for loop</li>
+          <li class="done-item">✓ while loop</li>
+          <li class="done-item">✓ range()</li>
+          <li class="done-item">✓ input() dalam loops</li>
+          <li style="color:#ffd60a; display:flex; align-items:center; gap:8px; padding:5px 8px; border-radius:5px; background:rgba(255,214,10,0.05); font-size:13px;">⚠️ break &amp; continue — belum belajar</li>
+          <li style="color:#ffd60a; display:flex; align-items:center; gap:8px; padding:5px 8px; border-radius:5px; background:rgba(255,214,10,0.05); font-size:13px;">⚠️ Nested loops — belum belajar</li>
+          <li style="color:#ffd60a; display:flex; align-items:center; gap:8px; padding:5px 8px; border-radius:5px; background:rgba(255,214,10,0.05); font-size:13px;">⚠️ Loop with else — belum belajar</li>
           <li class="locked-item">Practice: Multiplication Table</li>
           <li class="locked-item">Practice: Pattern Printing</li>
           <li class="locked-item">Module 4 Quiz</li>
         </ul>
+        <div style="margin-top:10px; padding:8px 12px; background:rgba(255,214,10,0.08); border:1px solid rgba(255,214,10,0.25); border-radius:6px; font-size:12px; font-family:'Space Mono',monospace; color:#ffd60a;">
+          ⚠️ Self-study needed: break/continue, nested loops, loop else — search "Python break continue tutorial"
+        </div>
         <div class="divider"></div>
         <div class="sl-section-label">🔥 Hidden Gem untuk Topic Ini</div>
         <div class="gem-inside">
@@ -1810,14 +1820,230 @@
       </div>
     </div>
     
+
+    <!-- MODULE CONTROL FLOW -->
+    <div class="nota-module-header">
+      <span class="nota-module-badge" style="background:rgba(255,107,53,0.15);color:#ff6b35;border:1px solid rgba(255,107,53,0.3);">CONTROL FLOW</span>
+      <span class="nota-module-title">Control Flow — Loops & Selection</span>
+      <div class="nota-module-line"></div>
+    </div>
+
+    <!-- Control Flow Basics -->
+    <div class="nota-card color-orange" onclick="toggleNota(this)">
+      <div class="nota-card-header">
+        <span class="nota-icon">🔀</span>
+        <span class="nota-title">Control Flow Basics</span>
+        <span class="nota-chevron">▼</span>
+      </div>
+      <div class="nota-body">
+        <div class="nota-body-inner">
+          <div class="nota-section">
+            <div class="nota-section-title orange">📌 3 Teknik Control Flow</div>
+            <table class="nota-table">
+              <tr><th>Teknik</th><th>Maksud</th><th>Contoh</th></tr>
+              <tr><td>Sequencing</td><td>Jalankan satu-per-satu dari atas ke bawah</td><td>Baris 1, 2, 3...</td></tr>
+              <tr><td>Iteration</td><td>Ulang blok kod beberapa kali</td><td>for loop, while loop</td></tr>
+              <tr><td>Selection</td><td>Pilih mana kod nak jalan berdasarkan condition</td><td>if / else</td></tr>
+            </table>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title orange">📌 Algorithm</div>
+            <p class="nota-text">Algorithm = set of step-by-step instructions untuk selesaikan masalah. Boleh ditulis dalam: Natural Language, Pseudocode, atau Flowchart.</p>
+          </div>
+          <div class="nota-tip orange">💡 Semua program — dari calculator sampai AI — adalah gabungan tiga teknik ni je.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- For Loops -->
+    <div class="nota-card color-orange" onclick="toggleNota(this)">
+      <div class="nota-card-header">
+        <span class="nota-icon">🔁</span>
+        <span class="nota-title">For Loops</span>
+        <span class="nota-chevron">▼</span>
+      </div>
+      <div class="nota-body">
+        <div class="nota-body-inner">
+          <div class="nota-section">
+            <div class="nota-section-title orange">📌 Syntax asas</div>
+            <div class="nota-code">
+              <span class="kw">for</span> i <span class="kw">in</span> <span class="fn">range</span>(<span class="num">5</span>):<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(i)<br>
+              <span class="cm"># Output: 0, 1, 2, 3, 4</span>
+            </div>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title orange">📌 range() — start dari 0, bukan 1</div>
+            <div class="nota-code">
+              <span class="fn">range</span>(<span class="num">5</span>)      <span class="cm"># 0, 1, 2, 3, 4</span><br>
+              <span class="fn">range</span>(<span class="num">1</span>, <span class="num">6</span>)   <span class="cm"># 1, 2, 3, 4, 5</span><br>
+              <span class="fn">range</span>(<span class="num">0</span>, <span class="num">10</span>, <span class="num">2</span>) <span class="cm"># 0, 2, 4, 6, 8 (step 2)</span>
+            </div>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title orange">📌 Multiple statements dalam loop</div>
+            <div class="nota-code">
+              <span class="kw">for</span> i <span class="kw">in</span> <span class="fn">range</span>(<span class="num">3</span>):<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(<span class="str">"Item ke-"</span> + <span class="fn">str</span>(i))<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(<span class="str">"---"</span>)<br>
+              <span class="cm"># Semua baris dalam loop kena indent sama</span>
+            </div>
+          </div>
+          <div class="nota-tip orange">⚠️ Kena ada colon : dan indentation. Tak ada indent = kod tu tak masuk loop.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- While Loops -->
+    <div class="nota-card color-orange" onclick="toggleNota(this)">
+      <div class="nota-card-header">
+        <span class="nota-icon">🔄</span>
+        <span class="nota-title">While Loops</span>
+        <span class="nota-chevron">▼</span>
+      </div>
+      <div class="nota-body">
+        <div class="nota-body-inner">
+          <div class="nota-section">
+            <div class="nota-section-title orange">📌 Syntax asas</div>
+            <div class="nota-code">
+              counter = <span class="num">0</span><br>
+              <span class="kw">while</span> counter &lt; <span class="num">5</span>:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(counter)<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;counter = counter + <span class="num">1</span><br>
+              <span class="cm"># Output: 0, 1, 2, 3, 4</span>
+            </div>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title orange">📌 Bila guna for vs while?</div>
+            <table class="nota-table">
+              <tr><th>Guna for</th><th>Guna while</th></tr>
+              <tr><td>Tahu bilangan iteration</td><td>Ada condition — loop sampai condition False</td></tr>
+              <tr><td>Loop through list/range</td><td>Tunggu user input yang betul</td></tr>
+            </table>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title orange">📌 Guna input() dalam while loop</div>
+            <div class="nota-code">
+              jawapan = <span class="str">""</span><br>
+              <span class="kw">while</span> jawapan != <span class="str">"ya"</span>:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;jawapan = <span class="fn">input</span>(<span class="str">"Setuju? "</span>)<br>
+              <span class="fn">print</span>(<span class="str">"Terima kasih!"</span>)
+            </div>
+          </div>
+          <div class="nota-tip orange">⚠️ Mesti ada counter atau condition yang akan jadi False — kalau tak, infinite loop!</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Selection: If-Else Basics -->
+    <div class="nota-card color-orange" onclick="toggleNota(this)">
+      <div class="nota-card-header">
+        <span class="nota-icon">🎯</span>
+        <span class="nota-title">Selection — If / Else</span>
+        <span class="nota-chevron">▼</span>
+      </div>
+      <div class="nota-body">
+        <div class="nota-body-inner">
+          <div class="nota-section">
+            <div class="nota-section-title orange">📌 Syntax asas</div>
+            <div class="nota-code">
+              <span class="kw">if</span> condition:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="cm"># jalan kalau condition = True</span><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(<span class="str">"True!"</span>)<br>
+              <span class="kw">else</span>:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="cm"># jalan kalau condition = False</span><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(<span class="str">"False!"</span>)
+            </div>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title orange">📌 Logical Operators: and, or</div>
+            <div class="nota-code">
+              <span class="cm"># and — KEDUA-DUA kena True</span><br>
+              is_student = <span class="kw">False</span><br>
+              age = <span class="num">16</span><br>
+              <span class="fn">print</span>(is_student <span class="kw">and</span> (age &lt; <span class="num">18</span>))  <span class="cm"># False</span><br>
+              <span class="cm"># False sebab is_student = False — Python stop sini (short-circuit)</span><br><br>
+              <span class="cm"># or — MANA-MANA SATU kena True</span><br>
+              age = <span class="num">32</span><br>
+              is_student = <span class="kw">True</span><br>
+              <span class="fn">print</span>(age &lt; <span class="num">18</span> <span class="kw">or</span> is_student)  <span class="cm"># True</span>
+            </div>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title orange">📌 Else boleh skip kalau tak perlu</div>
+            <div class="nota-code">
+              age = <span class="num">16</span><br>
+              <span class="kw">if</span> age &lt; <span class="num">18</span>: <span class="fn">print</span>(<span class="str">"Apply Discount"</span>)<br>
+              <span class="fn">print</span>(<span class="str">"Proceed to payment"</span>)  <span class="cm"># jalan always</span>
+            </div>
+          </div>
+          <div class="nota-tip orange">💡 Lepas if-else selesai, sequence sambung seperti biasa — baris luar block jalan sentiasa.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- elif & Nested If-Else -->
+    <div class="nota-card color-orange" onclick="toggleNota(this)">
+      <div class="nota-card-header">
+        <span class="nota-icon">🌳</span>
+        <span class="nota-title">elif & Nested If-Else</span>
+        <span class="nota-chevron">▼</span>
+      </div>
+      <div class="nota-body">
+        <div class="nota-body-inner">
+          <div class="nota-section">
+            <div class="nota-section-title orange">📌 elif = "else if" — check lebih banyak condition</div>
+            <div class="nota-code">
+              age = <span class="num">75</span><br>
+              <span class="kw">if</span> age &lt; <span class="num">18</span>:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(<span class="str">"Junior discount"</span>)<br>
+              <span class="kw">elif</span> age >= <span class="num">75</span>:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(<span class="str">"Senior discount"</span>)<br>
+              <span class="kw">else</span>:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(<span class="str">"No discount"</span>)
+            </div>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title orange">📌 Urutan if → elif → else KENA BETUL</div>
+            <ul class="nota-list orange">
+              <li>Python check dari atas ke bawah — yang pertama True akan jalan</li>
+              <li>if mesti dulu, elif lepas tu, else paling last</li>
+              <li>Boleh ada banyak elif tapi satu if dan satu else je</li>
+            </ul>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title orange">📌 Nested If-Else — if dalam if</div>
+            <div class="nota-code">
+              <span class="kw">if</span> age &lt; <span class="num">18</span>:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">if</span> is_student:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(<span class="str">"20% discount"</span>)<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">else</span>:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(<span class="str">"10% discount"</span>)<br>
+              <span class="kw">else</span>:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(<span class="str">"Regular price"</span>)
+            </div>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title orange">📌 Indentation tunjukkan level nesting</div>
+            <ul class="nota-list orange">
+              <li>Level 1 indent = dalam if pertama</li>
+              <li>Level 2 indent = dalam if yang nested</li>
+              <li>Variable kena declare dulu sebelum guna dalam if — kalau tak, error NameError</li>
+            </ul>
+          </div>
+          <div class="nota-tip orange">💡 Baca flowchart dari kanan ke kiri, bawah ke atas untuk faham nested logic dengan mudah.</div>
+        </div>
+      </div>
+    </div>
+
   </div><!-- end tab-nota -->
 
   <!-- CTA -->
   <div class="cta-box">
     <h3>🎯 Mission Kau Sekarang</h3>
     <p>
-      Kau dah habis Module 1, 2, 3 &amp; 4 ✅<br>
-      Next: <strong>Module 5 — Working with Lists</strong><br><br>
+      Kau dah habis Module 1, 2, 3 (penuh) + Control Flow ✅<br>
+      Next: <strong>Module 4/5 — Lists, Tuples &amp; Collections</strong><br><br>
       Teruskan momentum! Setiap kali stuck — tanya. 💪
     </p>
   </div>
