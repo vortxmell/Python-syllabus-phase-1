@@ -2036,14 +2036,265 @@
       </div>
     </div>
 
+
+    <!-- MODULE WORKING WITH LISTS -->
+    <div class="nota-module-header">
+      <span class="nota-module-badge" style="background:rgba(0,255,157,0.15);color:#00ff9d;border:1px solid rgba(0,255,157,0.3);">MODULE 5</span>
+      <span class="nota-module-title">Working With Lists</span>
+      <div class="nota-module-line"></div>
+    </div>
+
+    <!-- Apa itu List & Cara Buat -->
+    <div class="nota-card color-green" onclick="toggleNota(this)">
+      <div class="nota-card-header">
+        <span class="nota-icon">📦</span>
+        <span class="nota-title">Apa itu List & Cara Buat</span>
+        <span class="nota-chevron">▼</span>
+      </div>
+      <div class="nota-body">
+        <div class="nota-body-inner">
+          <div class="nota-section">
+            <div class="nota-section-title green">📌 Apa itu List?</div>
+            <p class="nota-text">List = cara simpan banyak values dalam satu variable. Macam kotak yang boleh tampung pelbagai item sekaligus. List adalah <strong>sequence</strong> — kandungannya tersusun ikut kedudukan (ordered).</p>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title green">📌 Cara buat list</div>
+            <div class="nota-code">
+              <span class="cm"># Guna square brackets [ ], values dipisahkan koma</span><br>
+              cart = [<span class="str">"milk"</span>, <span class="str">"tea"</span>, <span class="str">"jam"</span>]<br>
+              ages = [<span class="num">18</span>, <span class="num">31</span>, <span class="num">42</span>]<br>
+              prices = [<span class="num">0.59</span>, <span class="num">2.99</span>, <span class="num">14.5</span>]<br>
+              movie_info = [<span class="str">"Inception"</span>, <span class="num">2010</span>]  <span class="cm"># boleh campur data type</span>
+            </div>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title green">📌 Display list</div>
+            <div class="nota-code">
+              shopping_cart = [<span class="str">"laptop"</span>, <span class="str">"smartphone"</span>, <span class="str">"headphones"</span>]<br>
+              <span class="fn">print</span>(shopping_cart)<br>
+              <span class="cm"># Output: ['laptop', 'smartphone', 'headphones']</span>
+            </div>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title green">📌 List dari variables</div>
+            <div class="nota-code">
+              name = <span class="str">"Sarah"</span><br>
+              age = <span class="num">34</span><br>
+              country = <span class="str">"Germany"</span><br>
+              info = [name, age, country]
+            </div>
+          </div>
+          <div class="nota-tip green">⚠️ Items MESTI dipisahkan koma. Tanpa koma = error!</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Indexing -->
+    <div class="nota-card color-green" onclick="toggleNota(this)">
+      <div class="nota-card-header">
+        <span class="nota-icon">🔢</span>
+        <span class="nota-title">Indexing</span>
+        <span class="nota-chevron">▼</span>
+      </div>
+      <div class="nota-body">
+        <div class="nota-body-inner">
+          <div class="nota-section">
+            <div class="nota-section-title green">📌 Index bermula dari 0, bukan 1!</div>
+            <div class="nota-code">
+              animals = [<span class="str">"cat"</span>, <span class="str">"dog"</span>, <span class="str">"bird"</span>]<br>
+              <span class="cm">#  index:   0       1       2</span><br><br>
+              <span class="fn">print</span>(animals[<span class="num">0</span>])  <span class="cm"># → cat</span><br>
+              <span class="fn">print</span>(animals[<span class="num">1</span>])  <span class="cm"># → dog</span><br>
+              <span class="fn">print</span>(animals[<span class="num">2</span>])  <span class="cm"># → bird</span>
+            </div>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title green">📌 Index guna variable</div>
+            <div class="nota-code">
+              products = [<span class="str">"juice"</span>, <span class="str">"chocolate"</span>, <span class="str">"water"</span>]<br>
+              user_choice = <span class="num">1</span><br>
+              <span class="fn">print</span>(products[user_choice])  <span class="cm"># → chocolate</span>
+            </div>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title green">📌 Combine items</div>
+            <div class="nota-code">
+              words = [<span class="str">"sun"</span>, <span class="str">"rise"</span>]<br>
+              <span class="fn">print</span>(words[<span class="num">1</span>] + words[<span class="num">0</span>])  <span class="cm"># → sunrise</span>
+            </div>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title green">📌 String indexing — sama konsep!</div>
+            <div class="nota-code">
+              animal = <span class="str">"Dog"</span><br>
+              <span class="cm">#  D  o  g</span><br>
+              <span class="cm">#  0  1  2</span><br>
+              <span class="fn">print</span>(animal[<span class="num">0</span>])  <span class="cm"># → D</span><br>
+              <span class="fn">print</span>(animal[<span class="num">2</span>])  <span class="cm"># → g</span><br><br>
+              notification = <span class="str">"New message!"</span><br>
+              <span class="fn">print</span>(notification[<span class="num">4</span>])  <span class="cm"># → m (spaces dikira!)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mutable vs Immutable -->
+    <div class="nota-card color-green" onclick="toggleNota(this)">
+      <div class="nota-card-header">
+        <span class="nota-icon">🔒</span>
+        <span class="nota-title">Mutable vs Immutable</span>
+        <span class="nota-chevron">▼</span>
+      </div>
+      <div class="nota-body">
+        <div class="nota-body-inner">
+          <div class="nota-section">
+            <div class="nota-section-title green">📌 LIST = MUTABLE → boleh tukar selepas dibuat</div>
+            <div class="nota-code">
+              nums = [<span class="num">8</span>, <span class="num">6</span>, <span class="num">19</span>]<br>
+              nums[<span class="num">0</span>] = <span class="num">1</span><br>
+              <span class="fn">print</span>(nums)  <span class="cm"># → [1, 6, 19]</span><br><br>
+              <span class="cm"># Boleh tukar guna slice jugak:</span><br>
+              c = [<span class="str">'$'</span>, <span class="str">'£'</span>, <span class="str">'€'</span>, <span class="str">'¥'</span>]<br>
+              c[:<span class="num">2</span>] = [<span class="str">'F'</span>, <span class="str">'B'</span>]<br>
+              <span class="fn">print</span>(c)  <span class="cm"># → ['F', 'B', '€', '¥']</span>
+            </div>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title green">📌 STRING = IMMUTABLE → TIDAK boleh tukar</div>
+            <div class="nota-code">
+              word = <span class="str">"car"</span><br>
+              word[<span class="num">2</span>] = <span class="str">"t"</span>  <span class="cm"># → ERROR! TypeError</span><br><br>
+              vehicle = <span class="str">'airplane'</span><br>
+              vehicle[:<span class="num">3</span>] = <span class="str">'water'</span>  <span class="cm"># → ERROR! sama je</span>
+            </div>
+          </div>
+          <table class="nota-table">
+            <tr><th>Type</th><th>Mutable?</th><th>Boleh index & slice?</th></tr>
+            <tr><td>List</td><td>✅ Ya</td><td>✅ Ya</td></tr>
+            <tr><td>String</td><td>❌ Tidak</td><td>✅ Ya</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slicing -->
+    <div class="nota-card color-green" onclick="toggleNota(this)">
+      <div class="nota-card-header">
+        <span class="nota-icon">✂️</span>
+        <span class="nota-title">Slicing</span>
+        <span class="nota-chevron">▼</span>
+      </div>
+      <div class="nota-body">
+        <div class="nota-body-inner">
+          <div class="nota-section">
+            <div class="nota-section-title green">📌 Syntax: list[start : stop]</div>
+            <p class="nota-text"><strong>start</strong> = inclusive (termasuk) &nbsp;|&nbsp; <strong>stop</strong> = exclusive (tidak termasuk)</p>
+            <div class="nota-code">
+              animals = [<span class="str">"cat"</span>, <span class="str">"dog"</span>, <span class="str">"bird"</span>, <span class="str">"cow"</span>]<br>
+              <span class="fn">print</span>(animals[<span class="num">1</span>:<span class="num">3</span>])  <span class="cm"># → ['dog', 'bird']</span>
+            </div>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title green">📌 Advanced slicing</div>
+            <div class="nota-code">
+              cart = [<span class="str">'lamp'</span>, <span class="str">'candles'</span>, <span class="str">'chair'</span>, <span class="str">'carpet'</span>]<br><br>
+              <span class="fn">print</span>(cart[:<span class="num">3</span>])   <span class="cm"># → ['lamp', 'candles', 'chair']  (omit start)</span><br>
+              <span class="fn">print</span>(cart[<span class="num">1</span>:])   <span class="cm"># → ['candles', 'chair', 'carpet'] (omit stop)</span><br>
+              <span class="fn">print</span>(cart[:])    <span class="cm"># → semua items (omit kedua-dua)</span>
+            </div>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title green">📌 Slicing pada string</div>
+            <div class="nota-code">
+              vehicle = <span class="str">"airplane"</span><br>
+              <span class="fn">print</span>(vehicle[<span class="num">0</span>:<span class="num">3</span>])  <span class="cm"># → air</span><br>
+              <span class="fn">print</span>(vehicle[<span class="num">3</span>:])   <span class="cm"># → plane</span><br>
+              <span class="fn">print</span>(vehicle[:<span class="num">5</span>])   <span class="cm"># → airpl</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Negative Indexing -->
+    <div class="nota-card color-green" onclick="toggleNota(this)">
+      <div class="nota-card-header">
+        <span class="nota-icon">⬅️</span>
+        <span class="nota-title">Negative Indexing</span>
+        <span class="nota-chevron">▼</span>
+      </div>
+      <div class="nota-body">
+        <div class="nota-body-inner">
+          <div class="nota-section">
+            <div class="nota-section-title green">📌 Index dari hujung — -1 = last item</div>
+            <div class="nota-code">
+              animals = [<span class="str">"cat"</span>, <span class="str">"dog"</span>, <span class="str">"bird"</span>, <span class="str">"cow"</span>]<br>
+              <span class="cm">#  index:  -4      -3      -2      -1</span><br><br>
+              <span class="fn">print</span>(animals[-<span class="num">1</span>])    <span class="cm"># → cow   (last)</span><br>
+              <span class="fn">print</span>(animals[-<span class="num">2</span>])    <span class="cm"># → bird  (second last)</span><br>
+              <span class="fn">print</span>(animals[-<span class="num">3</span>:])   <span class="cm"># → ['dog', 'bird', 'cow']  (last 3)</span>
+            </div>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title green">📌 Combine positive + negative indexing</div>
+            <div class="nota-code">
+              c = [<span class="str">'$'</span>, <span class="str">'£'</span>, <span class="str">'€'</span>, <span class="str">'¥'</span>]<br>
+              <span class="fn">print</span>(c[<span class="num">1</span>:-<span class="num">1</span>])   <span class="cm"># → ['£', '€']   (index 1 hingga sebelum last)</span><br>
+              <span class="fn">print</span>(c[<span class="num">0</span>:-<span class="num">2</span>])   <span class="cm"># → ['$', '£']   (index 0 hingga 2 dari last)</span><br>
+              <span class="fn">print</span>(c[-<span class="num">3</span>:-<span class="num">1</span>]) <span class="cm"># → ['£', '€']</span><br>
+              <span class="fn">print</span>(c[-<span class="num">2</span>:])   <span class="cm"># → ['€', '¥']  (last 2)</span>
+            </div>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title green">📌 Negative indexing pada string</div>
+            <div class="nota-code">
+              vehicle = <span class="str">'motorbike'</span><br>
+              <span class="fn">print</span>(vehicle[-<span class="num">1</span>])   <span class="cm"># → e</span><br>
+              <span class="fn">print</span>(vehicle[-<span class="num">4</span>:])  <span class="cm"># → bike</span>
+            </div>
+          </div>
+          <div class="nota-tip green">💡 Negative index berguna bila nak ambil item dari belakang tanpa kira panjang list.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ringkasan Lists -->
+    <div class="nota-card color-green" onclick="toggleNota(this)">
+      <div class="nota-card-header">
+        <span class="nota-icon">📋</span>
+        <span class="nota-title">Ringkasan — Working With Lists</span>
+        <span class="nota-chevron">▼</span>
+      </div>
+      <div class="nota-body">
+        <div class="nota-body-inner">
+          <table class="nota-table">
+            <tr><th>Benda</th><th>Syntax / Info</th></tr>
+            <tr><td>Buat list</td><td>[val1, val2, val3]</td></tr>
+            <tr><td>Index mula dari</td><td>0</td></tr>
+            <tr><td>Last item index</td><td>-1</td></tr>
+            <tr><td>Akses item</td><td>list[index]</td></tr>
+            <tr><td>Tukar item (list)</td><td>list[index] = nilai_baru</td></tr>
+            <tr><td>Slice</td><td>list[start:stop]</td></tr>
+            <tr><td>Omit start</td><td>slice dari awal</td></tr>
+            <tr><td>Omit stop</td><td>slice sampai akhir</td></tr>
+            <tr><td>Negative index</td><td>-1 = last, -2 = second last</td></tr>
+            <tr><td>List</td><td>mutable (boleh ubah)</td></tr>
+            <tr><td>String</td><td>immutable (tak boleh ubah)</td></tr>
+            <tr><td>List &amp; String</td><td>sequences (boleh index &amp; slice)</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
   </div><!-- end tab-nota -->
 
   <!-- CTA -->
   <div class="cta-box">
     <h3>🎯 Mission Kau Sekarang</h3>
     <p>
-      Kau dah habis Module 1, 2, 3 (penuh) + Control Flow ✅<br>
-      Next: <strong>Module 4/5 — Lists, Tuples &amp; Collections</strong><br><br>
+      Kau dah habis Module 1, 2, 3 (penuh) + Control Flow + Working With Lists ✅<br>
+      Next: <strong>Module 5 — Mixing Things Up: Loops &amp; Lists</strong><br><br>
       Teruskan momentum! Setiap kali stuck — tanya. 💪
     </p>
   </div>
