@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Phase 1 Syllabus v3 — Road to AI Engineer</title>
+<title>Phase 1 Syllabus v6 — Road to AI Engineer</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap');
 
@@ -681,7 +681,7 @@
   <!-- SYLLABUS TAB -->
   <div id="tab-syllabus" class="tab-content active">
   <div class="header">
-    <div class="badge">🎯 Updated Roadmap v3</div>
+    <div class="badge">🎯 Updated Roadmap v6</div>
     <h1><span>Phase 1</span> Syllabus<br>Zero → Solid Python</h1>
     <p class="subtitle">Synced dengan Sololearn "Python Developer" path<br>Sub-topics + Hidden Gems setiap topic — jalan ke AI/ML Engineer</p>
   </div>
@@ -701,7 +701,7 @@
       <div class="stat-label">Per Day</div>
     </div>
     <div class="stat">
-      <div class="stat-num">~33%</div>
+      <div class="stat-num">~50%</div>
       <div class="stat-label">Progress</div>
     </div>
   </div>
@@ -710,10 +710,10 @@
   <div class="progress-wrap">
     <div class="progress-label">
       <span>Phase 1 Progress</span>
-      <span>~55% — Control Flow selesai!</span>
+      <span>~65% — Loops & Lists selesai!</span>
     </div>
     <div class="progress-bar">
-      <div class="progress-fill"></div>
+      <div class="progress-fill" style="width:65%;"></div>
     </div>
   </div>
 
@@ -940,8 +940,8 @@
     </div>
   </div>
 
-  <!-- Topic 5: Loops -->
-  <div class="topic-card delay-3" onclick="toggle(this)">
+  <!-- Topic 5: Loops ✅ DONE -->
+  <div class="topic-card done delay-3" onclick="toggle(this)">
     <div class="card-header">
       <span class="topic-icon">🔁</span>
       <div class="topic-info">
@@ -949,7 +949,7 @@
         <div class="topic-desc">Module 4 — The real power of programming</div>
       </div>
       <div class="tags">
-        <span class="tag tag-normal">Foundation</span>
+        <span class="tag tag-done">✓ Completed</span>
         <span class="tag tag-critical">Critical for AI</span>
       </div>
       <span class="chevron">▼</span>
@@ -958,19 +958,19 @@
       <div class="card-body-inner">
         <div class="sl-section-label">📱 Sololearn Lessons</div>
         <ul class="sl-lessons">
-          <li class="done-item">✓ for loop</li>
-          <li class="done-item">✓ while loop</li>
-          <li class="done-item">✓ range()</li>
-          <li class="done-item">✓ input() dalam loops</li>
-          <li style="color:#ffd60a; display:flex; align-items:center; gap:8px; padding:5px 8px; border-radius:5px; background:rgba(255,214,10,0.05); font-size:13px;">⚠️ break &amp; continue — belum belajar</li>
-          <li style="color:#ffd60a; display:flex; align-items:center; gap:8px; padding:5px 8px; border-radius:5px; background:rgba(255,214,10,0.05); font-size:13px;">⚠️ Nested loops — belum belajar</li>
-          <li style="color:#ffd60a; display:flex; align-items:center; gap:8px; padding:5px 8px; border-radius:5px; background:rgba(255,214,10,0.05); font-size:13px;">⚠️ Loop with else — belum belajar</li>
+          <li class="done-item">Iterating Over Lists (in operator, for loop)</li>
+          <li class="done-item">Nested Loops</li>
+          <li class="done-item">While Loop</li>
+          <li class="done-item">For Loop dengan range()</li>
+          <li class="done-item">Break Statement</li>
+          <li class="done-item">Continue Statement</li>
+          <li class="done-item">Shorthand Operators (+=, -=, *=, /=)</li>
           <li class="locked-item">Practice: Multiplication Table</li>
           <li class="locked-item">Practice: Pattern Printing</li>
           <li class="locked-item">Module 4 Quiz</li>
         </ul>
-        <div style="margin-top:10px; padding:8px 12px; background:rgba(255,214,10,0.08); border:1px solid rgba(255,214,10,0.25); border-radius:6px; font-size:12px; font-family:'Space Mono',monospace; color:#ffd60a;">
-          ⚠️ Self-study needed: break/continue, nested loops, loop else — search "Python break continue tutorial"
+        <div style="margin-top:10px; padding:8px 12px; background:rgba(255,107,53,0.08); border:1px solid rgba(255,107,53,0.25); border-radius:6px; font-size:12px; font-family:'Space Mono',monospace; color:#ff6b35;">
+          ⚠️ Belum belajar dalam Sololearn: Loop with else — boleh research sendiri
         </div>
         <div class="divider"></div>
         <div class="sl-section-label">🔥 Hidden Gem untuk Topic Ini</div>
@@ -993,7 +993,7 @@
           <div class="why-label">⚡ Kenapa critical untuk AI</div>
           ML memproses ribuan baris data. Loops adalah cara Python ulang proses tu. Tanpa faham loops, kau tak akan faham training ML models langsung.
         </div>
-        <div class="search-tip">🔍 Search: <span>"Python for loop while loop beginners"</span></div>
+        <div class="search-tip">🔍 Search: <span>"Python loop with else clause tutorial"</span> — untuk bahagian yang belum belajar</div>
       </div>
     </div>
   </div>
@@ -2037,6 +2037,334 @@
     </div>
 
 
+    <!-- MODULE MIXING THINGS UP: LOOPS & LISTS -->
+    <div class="nota-module-header">
+      <span class="nota-module-badge" style="background:rgba(123,97,255,0.15);color:#7b61ff;border:1px solid rgba(123,97,255,0.3);">MODULE 6</span>
+      <span class="nota-module-title">Mixing Things Up: Loops & Lists</span>
+      <div class="nota-module-line"></div>
+    </div>
+
+    <!-- Lesson 1: Iterating Over Lists -->
+    <div class="nota-card color-purple" onclick="toggleNota(this)">
+      <div class="nota-card-header">
+        <span class="nota-icon">🔁</span>
+        <span class="nota-title">Lesson 1 — Iterating Over Lists</span>
+        <span class="nota-chevron">▼</span>
+      </div>
+      <div class="nota-body">
+        <div class="nota-body-inner">
+          <div class="nota-section">
+            <div class="nota-section-title purple">📌 in operator — check sama ada item wujud</div>
+            <p class="nota-text"><code>in</code> boleh digunakan untuk check sama ada sesuatu item wujud dalam list atau string. Result dia adalah True atau False.</p>
+            <div class="nota-code">
+              products = [<span class="str">'milk'</span>, <span class="str">'eggs'</span>, <span class="str">'apples'</span>]<br>
+              <span class="fn">print</span>(<span class="str">'bananas'</span> <span class="kw">in</span> products)  <span class="cm"># → False</span><br>
+              <span class="fn">print</span>(<span class="str">'milk'</span> <span class="kw">in</span> products)     <span class="cm"># → True</span><br><br>
+              <span class="cm"># in juga berfungsi pada string:</span><br>
+              word = <span class="str">"movie"</span><br>
+              <span class="fn">print</span>(<span class="str">'o'</span> <span class="kw">in</span> word)  <span class="cm"># → True</span>
+            </div>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title purple">📌 for loop + in — iterate setiap item dalam list</div>
+            <p class="nota-text">Guna <code>for</code> dengan <code>in</code> untuk lalui setiap item dalam list satu persatu. Iterator variable (boleh guna nama apa je) mewakili item semasa setiap iteration.</p>
+            <div class="nota-code">
+              products = [<span class="str">'milk'</span>, <span class="str">'eggs'</span>, <span class="str">'apples'</span>]<br>
+              <span class="kw">for</span> i <span class="kw">in</span> products:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(i)<br>
+              <span class="cm"># Output: milk → eggs → apples</span><br><br>
+              <span class="cm"># Guna nama lain yang lebih bermakna:</span><br>
+              new_users = [<span class="str">'Tom'</span>, <span class="str">'Mery'</span>, <span class="str">'Anna'</span>]<br>
+              <span class="kw">for</span> user <span class="kw">in</span> new_users:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(<span class="str">"Welcome, "</span> + user)
+            </div>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title purple">📌 Buat operation semasa iteration</div>
+            <div class="nota-code">
+              prices = [<span class="num">15</span>, <span class="num">19</span>, <span class="num">24</span>, <span class="num">8</span>, <span class="num">5</span>]<br>
+              <span class="kw">for</span> price <span class="kw">in</span> prices:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;price = price + <span class="num">5</span><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(price)<br>
+              <span class="cm"># Output: 20, 24, 29, 13, 10</span>
+            </div>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title purple">📌 Shorthand Operators</div>
+            <table class="nota-table">
+              <tr><th>Shorthand</th><th>Sama dengan</th><th>Maksud</th></tr>
+              <tr><td>x += 5</td><td>x = x + 5</td><td>Tambah</td></tr>
+              <tr><td>x -= 5</td><td>x = x - 5</td><td>Tolak</td></tr>
+              <tr><td>x *= 5</td><td>x = x * 5</td><td>Darab</td></tr>
+              <tr><td>x /= 5</td><td>x = x / 5</td><td>Bahagi</td></tr>
+            </table>
+            <div class="nota-code">
+              x = <span class="num">15</span><br>
+              x += <span class="num">5</span>    <span class="cm"># sama dengan x = x + 5</span><br>
+              <span class="fn">print</span>(x)  <span class="cm"># → 20</span><br><br>
+              <span class="cm"># Berguna dalam iteration:</span><br>
+              <span class="kw">for</span> i <span class="kw">in</span> prices:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;i += <span class="num">5</span>
+            </div>
+          </div>
+          <div class="nota-tip purple">💡 Output ikut susunan list — item pertama dulu, kemudian seterusnya. Urutan terjaga.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lesson 2: Nested Loops -->
+    <div class="nota-card color-purple" onclick="toggleNota(this)">
+      <div class="nota-card-header">
+        <span class="nota-icon">🔄</span>
+        <span class="nota-title">Lesson 2 — Nested Loops</span>
+        <span class="nota-chevron">▼</span>
+      </div>
+      <div class="nota-body">
+        <div class="nota-body-inner">
+          <div class="nota-section">
+            <div class="nota-section-title purple">📌 Apa itu Nested Loop?</div>
+            <p class="nota-text">Nested loop = loop dalam loop. Setiap kali <strong>outer loop</strong> jalan sekali, <strong>inner loop</strong> akan jalan sepenuhnya dari awal sampai habis. Berguna untuk hasilkan semua kombinasi yang mungkin.</p>
+            <div class="nota-code">
+              ranks = [<span class="str">"Ace"</span>, <span class="str">"King"</span>, <span class="str">"Queen"</span>]<br>
+              suits = [<span class="str">"Hearts"</span>, <span class="str">"Clubs"</span>, <span class="str">"Diamonds"</span>]<br><br>
+              <span class="kw">for</span> rank <span class="kw">in</span> ranks:       <span class="cm"># ← outer loop</span><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">for</span> suit <span class="kw">in</span> suits:   <span class="cm"># ← inner loop</span><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(rank, suit)<br>
+              <span class="cm"># Output: Ace Hearts, Ace Clubs, Ace Diamonds, King Hearts...</span>
+            </div>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title purple">📌 Kira bilangan output</div>
+            <p class="nota-text">Jumlah baris output = saiz outer list <strong>×</strong> saiz inner list.</p>
+            <div class="nota-code">
+              ranks = [<span class="str">'Ace'</span>, <span class="str">'King'</span>]   <span class="cm"># 2 items</span><br>
+              suits = [<span class="str">'Hearts'</span>, <span class="str">'Clubs'</span>]  <span class="cm"># 2 items</span><br>
+              <span class="cm"># 2 × 2 = 4 kombinasi output</span>
+            </div>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title purple">📌 Tindakan berbeza untuk outer dan inner</div>
+            <div class="nota-code">
+              days = [<span class="str">'Monday'</span>, <span class="str">'Wednesday'</span>, <span class="str">'Friday'</span>]<br>
+              tasks = [<span class="str">'Gym'</span>, <span class="str">'Homework'</span>, <span class="str">'Pool'</span>]<br><br>
+              <span class="kw">for</span> day <span class="kw">in</span> days:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(day + <span class="str">':'</span>)    <span class="cm"># ← outer action</span><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">for</span> task <span class="kw">in</span> tasks:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(task)    <span class="cm"># ← inner action</span>
+            </div>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title purple">📌 Nested loops dengan range()</div>
+            <div class="nota-code">
+              <span class="kw">for</span> i <span class="kw">in</span> <span class="fn">range</span>(<span class="num">1</span>, <span class="num">3</span>):<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">for</span> j <span class="kw">in</span> <span class="fn">range</span>(<span class="num">2</span>, <span class="num">4</span>):<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(i, j)<br>
+              <span class="cm"># → 4 baris output (2 × 2)</span><br><br>
+              <span class="cm"># Combine list dan range — print setiap move 3 kali:</span><br>
+              moves = [<span class="str">"Step Turn"</span>, <span class="str">"Jazz Hands"</span>, <span class="str">"Shuffle"</span>]<br>
+              <span class="kw">for</span> move <span class="kw">in</span> moves:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">for</span> i <span class="kw">in</span> <span class="fn">range</span>(<span class="num">3</span>):<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(move)
+            </div>
+          </div>
+          <div class="nota-tip purple">⚠️ Wajib maintain indentation yang betul — outer loop satu level, inner loop dua level.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lesson 3: While Loop -->
+    <div class="nota-card color-purple" onclick="toggleNota(this)">
+      <div class="nota-card-header">
+        <span class="nota-icon">⏳</span>
+        <span class="nota-title">Lesson 3 — While Loop (Recap + Lanjutan)</span>
+        <span class="nota-chevron">▼</span>
+      </div>
+      <div class="nota-body">
+        <div class="nota-body-inner">
+          <div class="nota-section">
+            <div class="nota-section-title purple">📌 For vs While — perbezaan utama</div>
+            <table class="nota-table">
+              <tr><th>For Loop</th><th>While Loop</th></tr>
+              <tr><td>Tahu berapa kali nak loop</td><td>Tak tahu berapa kali — bergantung pada condition</td></tr>
+              <tr><td>Iterate item dalam list/range</td><td>Loop selagi condition = True</td></tr>
+            </table>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title purple">📌 Struktur while loop</div>
+            <div class="nota-code">
+              seats = <span class="num">30</span><br>
+              <span class="kw">while</span> seats > <span class="num">0</span>:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(<span class="str">"Sell ticket"</span>)<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;seats -= <span class="num">1</span><br>
+              <span class="cm"># Loop jalan 30 kali, berhenti bila seats = 0</span>
+            </div>
+          </div>
+          <div class="nota-tip purple">⚠️ Mesti ada sesuatu yang ubah nilai condition — kalau tak, infinite loop!</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lesson 5: Break Statement -->
+    <div class="nota-card color-purple" onclick="toggleNota(this)">
+      <div class="nota-card-header">
+        <span class="nota-icon">🛑</span>
+        <span class="nota-title">Lesson 5 — Break Statement</span>
+        <span class="nota-chevron">▼</span>
+      </div>
+      <div class="nota-body">
+        <div class="nota-body-inner">
+          <div class="nota-section">
+            <div class="nota-section-title purple">📌 Apa itu break?</div>
+            <p class="nota-text"><code>break</code> = hentikan loop serta-merta bila condition dipenuhi. Berguna bila nak cari item tertentu — tak perlu teruskan loop lepas jumpa.</p>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title purple">📌 break dalam for loop</div>
+            <div class="nota-code">
+              songs = [<span class="str">"Hello"</span>, <span class="str">"Yesterday"</span>, <span class="str">"Happy"</span>, <span class="str">"Hallelujah"</span>]<br>
+              <span class="kw">for</span> song <span class="kw">in</span> songs:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(<span class="str">"Searching"</span>)<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">if</span> song == <span class="str">"Happy"</span>:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(<span class="str">"Playing "</span> + song)<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">break</span>  <span class="cm"># ← loop berhenti di sini</span><br>
+              <span class="cm"># Tak scan baki list lepas jumpa "Happy"</span>
+            </div>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title purple">📌 Kira output bila ada break</div>
+            <div class="nota-code">
+              prices = [<span class="num">35</span>, <span class="num">80</span>, <span class="num">16</span>, <span class="num">100</span>, <span class="num">95</span>, <span class="num">76</span>]<br>
+              <span class="kw">for</span> price <span class="kw">in</span> prices:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">if</span> price > <span class="num">90</span>:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">break</span><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(price)<br>
+              <span class="cm"># 35 → 80 → 16 → 100 (break, print 100 tak sempat jalan)</span><br>
+              <span class="cm"># Output: 35, 80, 16</span>
+            </div>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title purple">📌 while True + break</div>
+            <p class="nota-text"><code>while True</code> = condition sentiasa True, loop jalan tanpa henti. Hanya berhenti bila <code>break</code> dicapai. Guna bila nak terus minta input dari user.</p>
+            <div class="nota-code">
+              <span class="kw">while</span> <span class="kw">True</span>:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;text = <span class="fn">input</span>()<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(text)<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">if</span> text == <span class="str">'Stop'</span>:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">break</span>
+            </div>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title purple">📌 break dengan accumulator</div>
+            <div class="nota-code">
+              prices = [<span class="num">10</span>, <span class="num">54</span>, <span class="num">9</span>, <span class="num">44</span>, <span class="num">6</span>, <span class="num">26</span>, <span class="num">15</span>]<br>
+              total = <span class="num">0</span><br>
+              <span class="kw">for</span> price <span class="kw">in</span> prices:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;total += price<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(total)<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">if</span> total > <span class="num">100</span>:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(<span class="str">"Limit exceeded"</span>)<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">break</span>
+            </div>
+          </div>
+          <div class="nota-tip purple">⚠️ break mesti berada dalam if block, dengan indentation yang betul — kalau tak, error!</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lesson 6: Continue Statement -->
+    <div class="nota-card color-purple" onclick="toggleNota(this)">
+      <div class="nota-card-header">
+        <span class="nota-icon">⏭️</span>
+        <span class="nota-title">Lesson 6 — Continue Statement</span>
+        <span class="nota-chevron">▼</span>
+      </div>
+      <div class="nota-body">
+        <div class="nota-body-inner">
+          <div class="nota-section">
+            <div class="nota-section-title purple">📌 Apa itu continue?</div>
+            <table class="nota-table">
+              <tr><th>Statement</th><th>Apa yang jadi</th></tr>
+              <tr><td>break</td><td>Henti loop terus — keluar sepenuhnya</td></tr>
+              <tr><td>continue</td><td>Skip iteration semasa je, loop teruskan ke item seterusnya</td></tr>
+            </table>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title purple">📌 continue dalam for loop — filter umur</div>
+            <div class="nota-code">
+              ages = [<span class="num">13</span>, <span class="num">19</span>, <span class="num">22</span>, <span class="num">8</span>, <span class="num">75</span>, <span class="num">34</span>]<br>
+              <span class="kw">for</span> age <span class="kw">in</span> ages:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">if</span> age < <span class="num">18</span>:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">continue</span>  <span class="cm"># skip yang bawah 18</span><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(age)<br>
+              <span class="cm"># Output: 19, 22, 75, 34</span>
+            </div>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title purple">📌 continue dengan string check</div>
+            <div class="nota-code">
+              animals = [<span class="str">"cat"</span>, <span class="str">"giraffe"</span>, <span class="str">"lion"</span>, <span class="str">"leopard"</span>, <span class="str">"mouse"</span>]<br>
+              <span class="kw">for</span> animal <span class="kw">in</span> animals:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">if</span> animal[<span class="num">0</span>] == <span class="str">"l"</span>:  <span class="cm"># semak huruf pertama</span><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">continue</span><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(animal)<br>
+              <span class="cm"># Output: cat, giraffe, mouse (lion & leopard diskip)</span>
+            </div>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title purple">📌 continue dalam while loop — PERANGKAP penting!</div>
+            <div class="nota-code">
+              day_number = <span class="num">1</span><br>
+              <span class="kw">while</span> day_number <= <span class="num">7</span>:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">if</span> day_number == <span class="num">4</span>:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;day_number += <span class="num">1</span>  <span class="cm"># ← MESTI increment SEBELUM continue!</span><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">continue</span><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(day_number, <span class="str">"Turn on the lights!"</span>)<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;day_number += <span class="num">1</span>
+            </div>
+            <div class="nota-tip purple">⚠️ Dalam while loop, kena increment SEBELUM continue — kalau tak, infinite loop sebab nilai tak pernah berubah!</div>
+          </div>
+          <div class="nota-section">
+            <div class="nota-section-title purple">📌 continue untuk filter markah</div>
+            <div class="nota-code">
+              grades = [<span class="num">45</span>, <span class="num">80</span>, <span class="num">55</span>, <span class="num">90</span>, <span class="num">48</span>, <span class="num">60</span>, <span class="num">30</span>]<br>
+              <span class="kw">for</span> grade <span class="kw">in</span> grades:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">if</span> grade <= <span class="num">50</span>:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">continue</span>  <span class="cm"># skip yang fail</span><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(grade)<br>
+              <span class="cm"># Output: 80, 55, 90, 60</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ringkasan Loops & Lists -->
+    <div class="nota-card color-purple" onclick="toggleNota(this)">
+      <div class="nota-card-header">
+        <span class="nota-icon">📋</span>
+        <span class="nota-title">Ringkasan — Mixing Things Up: Loops & Lists</span>
+        <span class="nota-chevron">▼</span>
+      </div>
+      <div class="nota-body">
+        <div class="nota-body-inner">
+          <table class="nota-table">
+            <tr><th>Konsep</th><th>Syntax</th><th>Kegunaan</th></tr>
+            <tr><td>in operator</td><td>item in list</td><td>Check wujud atau tak dalam list/string</td></tr>
+            <tr><td>for loop iterate list</td><td>for i in list:</td><td>Lalui setiap item dalam list</td></tr>
+            <tr><td>while loop</td><td>while condition:</td><td>Loop selagi condition True</td></tr>
+            <tr><td>while True</td><td>while True:</td><td>Loop infinite, perlukan break</td></tr>
+            <tr><td>Shorthand tambah</td><td>x += 5</td><td>Sama dengan x = x + 5</td></tr>
+            <tr><td>Shorthand tolak</td><td>x -= 5</td><td>Sama dengan x = x - 5</td></tr>
+            <tr><td>Nested loop</td><td>loop dalam loop</td><td>Hasilkan semua kombinasi</td></tr>
+            <tr><td>Jumlah output</td><td>outer × inner</td><td>Kira baris output nested loop</td></tr>
+            <tr><td>break</td><td>break</td><td>Henti loop terus bila condition met</td></tr>
+            <tr><td>continue</td><td>continue</td><td>Skip iteration semasa, teruskan loop</td></tr>
+            <tr><td>Indentation</td><td>2 spaces per level</td><td>Wajib betul untuk nested/break/continue</td></tr>
+          </table>
+          <div class="nota-tip purple">💡 break = keluar terus dari loop. continue = skip satu iteration je. Jangan keliru!</div>
+        </div>
+      </div>
+    </div>
+
     <!-- MODULE WORKING WITH LISTS -->
     <div class="nota-module-header">
       <span class="nota-module-badge" style="background:rgba(0,255,157,0.15);color:#00ff9d;border:1px solid rgba(0,255,157,0.3);">MODULE 5</span>
@@ -2293,8 +2621,8 @@
   <div class="cta-box">
     <h3>🎯 Mission Kau Sekarang</h3>
     <p>
-      Kau dah habis Module 1, 2, 3 (penuh) + Control Flow + Working With Lists ✅<br>
-      Next: <strong>Module 5 — Mixing Things Up: Loops &amp; Lists</strong><br><br>
+      Kau dah habis Module 1, 2, 3 (penuh) + Control Flow + Working With Lists + Loops ✅<br>
+      Next: <strong>Module 5 — Functions</strong><br><br>
       Teruskan momentum! Setiap kali stuck — tanya. 💪
     </p>
   </div>
